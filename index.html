@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta content="origin" name="referrer"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0"><link rel="icon" href="favicon.ico"><title>身份认证</title><script>// 测试浏览器是否支持Vue
+    try {
+      Object.defineProperty({}, 'property1', { canIUseVue: true });
+    } catch (err) {
+      window.location.replace("https://h5.dabby.com.cn/authhtml/error.html?tip=2");
+    }
+
+    //Android5.0 以下
+    var ua = navigator.userAgent.toLowerCase();
+    var version = null;
+    if (ua.indexOf("android") > 0) {
+      var reg1 = /android [\d._]+/gi;
+      var v_info1 = ua.match(reg1);
+      version = (v_info1 + "").replace(/[^0-9|_.]/gi, "").replace(/_/gi, ".");
+      version = parseInt(version.split(".")[0]);
+      if (version < 5) {
+        window.location.replace("https://h5.dabby.com.cn/authhtml/error.html?tip=2");
+      }
+    }
+
+    //iOS11.0 以下不支持
+    if (ua.indexOf("like mac os x") > 0) {
+      var reg2 = /os [\d._]+/gi;
+      var v_info2 = ua.match(reg2);
+      version = (v_info2 + "").replace(/[^0-9|_.]/ig, "").replace(/_/ig, ".");
+      version = parseInt(version.split('.')[0]);
+      if (version < 11) {
+        window.location.replace("https://h5.dabby.com.cn/authhtml/error.html?tip=2");
+      }
+    }</script><link href="static/css/chunk-0a9e4608.e48dcb29.css" rel="prefetch"><link href="static/css/chunk-0cdf2d8b.6ba60d91.css" rel="prefetch"><link href="static/css/chunk-2a3a396f.fe460fc1.css" rel="prefetch"><link href="static/css/chunk-49a8906d.02ef3eb5.css" rel="prefetch"><link href="static/css/chunk-4b7a689e.816e399e.css" rel="prefetch"><link href="static/css/chunk-4fbb23c0.c914b1d3.css" rel="prefetch"><link href="static/css/chunk-7bddacca.76223be6.css" rel="prefetch"><link href="static/js/chunk-0a9e4608.be27878c.js" rel="prefetch"><link href="static/js/chunk-0cdf2d8b.121d6f3a.js" rel="prefetch"><link href="static/js/chunk-2a3a396f.6cba51ac.js" rel="prefetch"><link href="static/js/chunk-49a8906d.13e504d8.js" rel="prefetch"><link href="static/js/chunk-4b7a689e.b9050115.js" rel="prefetch"><link href="static/js/chunk-4fbb23c0.b44bb9e8.js" rel="prefetch"><link href="static/js/chunk-50b2872c.0d4ac9d2.js" rel="prefetch"><link href="static/js/chunk-7bddacca.a30481cb.js" rel="prefetch"><link href="static/css/app.e783fb61.css" rel="preload" as="style"><link href="static/js/app.243255f6.js" rel="preload" as="script"><link href="static/css/app.e783fb61.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but face doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="static/js/app.243255f6.js"></script></body></html>
