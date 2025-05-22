@@ -1,10 +1,121 @@
 <!--
 <!DOCTYPE html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Vue App</title><link href=app.522b30b804583a864f2e.js rel=preload as=script><link href=chunk-vendors.bf4c771e7722a82b3d9a.js rel=preload as=script><link href=static/css/app.3ad9dfb3.css rel=preload as=style><link href=static/css/app.3ad9dfb3.css rel=stylesheet></head><body><div id=app></div><script src=chunk-vendors.bf4c771e7722a82b3d9a.js></script><script src=app.522b30b804583a864f2e.js></script></body></html>
 -->
+
 <!DOCTYPE html>
-  <html>
-    <head></head>
-    <body>
-      测试页面
-    </body>
-  </html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    label {
+      margin-right: 10px;
+    }
+    input {
+      outline: none;
+    }
+    .left {
+      margin: 0 20px 0 0;
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .right {
+      width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .scheme {
+      width: 300px;
+      margin: 50px auto;
+    }
+    .scheme input {
+      display: block;
+      line-height: 30px;
+      width: 100%;
+    }
+    .scheme a {
+      display: block;
+      margin-top: 20px;
+    }
+	</style>
+</head>
+<body>
+  <div id="app">
+    <div class="scheme">
+      <input type="text" placeholder="请输入scheme链接" v-model.trim="link"> <br/>
+      <a :href="link">scheme码跳转</a>
+    </div>
+    <!-- <p>我是段落</p>
+    <div class="left">
+      <form onsubmit="return false">
+        <section>
+          <label for="name">活动名称</label>
+          <input type="text" id="name" v-model="form.name"/>
+        </section>
+        <section>
+          <label for="area">活动区域</label>
+          <select id="area" v-model="form.area">
+            <option :value="1">上海</option>
+            <option :value="2">北京</option>
+          </select>
+        </section>  
+        <section>
+          <label for="time">活动时间</label>
+          <input type="datetime-local" id="time" v-model="form.time"/>
+        </section>
+        <section>
+          <label for="type">活动性质</label>
+          <input type="checkbox" id="type" :value="1" v-model="form.type"/>线上活动
+          <input type="checkbox" id="type" :value="2" v-model="form.type"/>线下活动
+        </section>
+        <section>
+          <label for="sex">性别</label>
+          <input type="radio" id="sex" :value="1" v-model="form.sex"/>男
+          <input type="radio" id="sex" :value="2" v-model="form.sex"/>女
+        </section>
+        <button>提交</button>
+        <button>取消</button>
+      </form>
+    </div>
+    <div class="right">
+      <pre>{{ form }}</pre>
+    </div> -->
+  </div>
+	<!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script> -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.5.13/vue.global.js"></script>
+
+  <script>
+    const { createApp, ref } = Vue
+    const app = createApp({
+      setup () {
+        const link = ref('')
+        const form = ref({
+          name: '活动名称',
+          area: 1,
+          time: null,
+          type: [1],
+          sex: null
+        })
+
+        return {
+          form,
+          link
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+
+  <script type="module">
+    import data from './test2.js'
+    console.log(data);
+    
+  </script>
+</body>
+</html>
